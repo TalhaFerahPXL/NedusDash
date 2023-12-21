@@ -1,5 +1,5 @@
 
-let isWhite = false;
+let isWhite = true;
 
 
 if (isWhite){
@@ -336,17 +336,34 @@ document.getElementById("Theme-LightMode").addEventListener("click", ()=>{
 // NotificationIcon START
 
 
-document.querySelector(".mixedNotification").addEventListener("click", ()=>{
-
-    document.querySelector(".navBarNotifications").style.display = "flex"
+document.querySelector(".mixedNotification").addEventListener("click", (event) => {
+    document.querySelector(".navBarNotifications").style.display = "flex";
+    let notificationBtn = document.getElementById("notificationBtn")
+    notificationBtn.style.background = "rgba(188, 189, 194, 0.25)";
+    notificationBtn.style.borderRadius = "6px"
 
     const segmentCreated = document.getElementById('segmentCreated');
 
-        segmentCreated.style.borderRadius = '6px';
-        segmentCreated.style.background = '#FFF';
-        segmentCreated.style.boxShadow = '0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 2px 14px -2px rgba(79, 81, 89, 0.12), 0px 0px 0px 1px rgba(188, 189, 194, 0.30), 0px 1px 1px 0px rgba(188, 189, 194, 0.20)';
+    segmentCreated.style.borderRadius = '6px';
+    segmentCreated.style.background = '#FFF';
+    segmentCreated.style.boxShadow = '0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 2px 14px -2px rgba(79, 81, 89, 0.12), 0px 0px 0px 1px rgba(188, 189, 194, 0.30), 0px 1px 1px 0px rgba(188, 189, 194, 0.20)';
 
 
-})
+
+    event.stopPropagation(); // Stop event bubbling
+});
+
+// Listen for clicks on the document
+document.addEventListener("click", (event) => {
+    const navBar = document.querySelector(".navBarNotifications");
+    const isClickedOutsideNavBar = !navBar.contains(event.target);
+
+    if (isClickedOutsideNavBar) {
+        navBar.style.display = "none";
+        notificationBtn.style.background = '';
+        notificationBtn.style.borderRadius = ""
+    }
+});
+
 
 // NotificationIcon END
