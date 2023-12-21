@@ -100,9 +100,19 @@ function goWhite() {
     // border bottom
     document.querySelector(".module").style.borderTop ="1px solid rgba(188, 189, 194, 0.18)"
 
+    var keys = document.querySelectorAll(".keys");
+    keys.forEach(function(key) {
+        key.style.background = "";
+        key.style.boxShadow = "";
+    });
 
-    document.getElementById("headerAvatorSeprator").style.fill = "black"
-    document.getElementById("headerAvatorSeprator").style.fillOpacity = ""
+    var separators = document.querySelectorAll(".nabarSeprator");
+
+    separators.forEach(function(sep) {
+        sep.style.fill = "black";
+        sep.style.fillOpacity = "";
+    });
+
 
 }
 
@@ -153,7 +163,21 @@ function goDark() {
     // border bottom
     document.querySelector(".module").style.borderTop ="1px solid rgba(184, 184, 184, 0.11)"
 
-    document.getElementById("headerAvatorSeprator").style.fill = ""
+
+
+    var keys = document.querySelectorAll(".keys");
+    keys.forEach(function(key) {
+        key.style.background = "linear-gradient(180deg, #222 0%, rgba(34, 34, 34, 0.98) 100%)";
+        key.style.boxShadow = "0px 4px 4px -4px rgba(0, 0, 0, 0.32), 0px 2px 5px -2px rgba(0, 0, 0, 0.03), 0px 2px 14px -2px rgba(0, 0, 0, 0.12), 0px 0px 0px 0.5px #000, 0px 0px 0px 1px rgba(184, 184, 184, 0.22) inset, 0px 1px 0px 0px rgba(255, 255, 255, 0.06) inset, 0px 0.5px 0px 0px rgba(255, 255, 255, 0.06) inset";
+    });
+
+
+    var separators = document.querySelectorAll(".nabarSeprator");
+
+    separators.forEach(function(sep) {
+        sep.style.fill = "";
+
+    });
 }
 
 
@@ -226,29 +250,29 @@ function selectElement(element) {
     var path = element.querySelector('path');
     path.setAttribute('fill', '#F7BB00');
 
-
     element.style.borderRadius = "6px";
 
     var backdropParagraph = element.querySelector('.backdrop-container p');
 
     if (isWhite) {
-
-
         element.style.background = "rgba(188, 189, 194, 0.20)";
         element.style.boxShadow = "0px -1px 0px 0px rgba(188, 189, 194, 0.20) inset";
         kleurInWit();
         backdropParagraph.style.color = "#18181B";
-
     } else {
         backdropParagraph.style.color = "#E5E5E5";
         element.style.background = "rgba(184, 184, 184, 0.13)";
         element.style.boxShadow = "0px -1px 0px 0px rgba(184, 184, 184, 0.09) inset";
-
     }
 }
 
 var selectedElement = null;
 var sidebarElements = document.querySelectorAll('.sidebar-01-backdrop');
+var firstElement = document.querySelector('.sidebar-01-backdrop');
+
+// Functie om het eerste element standaard te selecteren
+selectElement(firstElement);
+selectedElement = firstElement;
 
 sidebarElements.forEach(function(element) {
     element.addEventListener('click', function() {
@@ -262,3 +286,67 @@ sidebarElements.forEach(function(element) {
 });
 
 
+const mixedAvatar = document.querySelector('.mixedAvatar');
+const menuList = mixedAvatar.querySelector('.menuList');
+
+mixedAvatar.addEventListener('mouseover', function() {
+    menuList.style.display = 'flex';
+});
+
+menuList.addEventListener('mouseleave', function() {
+    menuList.style.display = 'none';
+});
+
+
+
+// Menu Theme Click START
+
+document.getElementById("menuItem-Theme").addEventListener("click", ()=>{
+
+    document.querySelector(".menuContainer").style.display = "none";
+
+    //werkt niet
+    //document.querySelector(".menuListBackdrop").style.height = "175";
+    document.querySelector(".menuContainer2").style.display = "flex";
+
+
+
+})
+
+
+document.getElementById("menuItem-Theme2").addEventListener("click", ()=>{
+    document.querySelector(".menuContainer").style.display = "flex";
+    document.querySelector(".menuListBackdrop").style.height = "";
+    document.querySelector(".menuContainer2").style.display = "none";
+})
+
+
+document.getElementById("Theme-DarkMode").addEventListener("click", ()=>{
+    goDark()
+})
+
+document.getElementById("Theme-LightMode").addEventListener("click", ()=>{
+    goWhite()
+})
+// Menu Theme Click END
+
+
+
+
+// NotificationIcon START
+
+
+document.querySelector(".mixedNotification").addEventListener("click", ()=>{
+
+    document.querySelector(".navBarNotifications").style.display = "flex"
+
+    const segmentCreated = document.getElementById('segmentCreated');
+
+        segmentCreated.style.borderRadius = '6px';
+        segmentCreated.style.background = '#FFF';
+        segmentCreated.style.boxShadow = '0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 2px 14px -2px rgba(79, 81, 89, 0.12), 0px 0px 0px 1px rgba(188, 189, 194, 0.30), 0px 1px 1px 0px rgba(188, 189, 194, 0.20)';
+
+
+})
+
+// NotificationIcon END

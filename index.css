@@ -389,9 +389,12 @@ body{
 }
 .mixedNotification{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     gap: 8px;
+    position: relative;
 }
+
 
 #notificationBtn{
     display: flex;
@@ -401,12 +404,230 @@ body{
     gap: 10px;
 }
 
+#notificationBtn:hover{
+    cursor: pointer;
+}
+
+.notificationDot{
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 108px;
+    border: 0.5px solid #FFF;
+    background: #F87171;
+
+    /* el/basis/sm */
+    box-shadow: 0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 1px 0px 0px rgba(255, 255, 255, 0.06) inset, 0px 0.5px 0px 0px rgba(255, 255, 255, 0.06) inset;
+
+}
+
 .notificationLeadIcon{
     display: flex;
     width: 16px;
     height: 24px;
     justify-content: center;
     align-items: center;
+}
+
+.navBarNotifications{
+    display: none;
+    width: 356px;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 32.5px;
+}
+
+.notificationBackdrop{
+    /*display: flex;*/
+    width: 354px;
+    height: 378px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 1px;
+    border-radius: 8px;
+    /*background: #FFF;*/
+
+    /* dp/basis/xl */
+    box-shadow: 0px 8px 12px -6px rgba(79, 81, 89, 0.16), 0px 16px 24px -8px rgba(79, 81, 89, 0.20), 0px 0px 0px 1px rgba(188, 189, 194, 0.20), 0px 1px 0px 0px rgba(255, 255, 255, 0.06) inset, 0px 0.5px 0px 0px rgba(255, 255, 255, 0.06) inset;
+}
+
+.NotificationTab{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    padding: 8px;
+}
+.notificationSegment{
+    display: flex;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+
+    border-radius: 8px;
+    background: rgba(9, 9, 11, 0.02);
+
+    /* el/inner/xs ↓ */
+    box-shadow: 0px 1px 1px 0px rgba(79, 81, 89, 0.06) inset, 0px 0px 1px 0.5px rgba(79, 81, 89, 0.03) inset;
+}
+
+
+.notificationContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    align-self: stretch;
+    padding: 8px;
+}
+
+.notificationItemBar{
+    display: flex;
+    padding: 8px 8px 8px 12px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 10px;
+}
+
+.notificationItemBar:hover{
+    cursor: pointer;
+    border-radius: 10px;
+    background: rgba(188, 189, 194, 0.15);
+
+    /* el/inner/xs ↑ */
+    box-shadow: 0px -1px 0px 0px rgba(188, 189, 194, 0.20) inset;
+}
+
+.notificationItemBarContent{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+}
+
+.itemBarContent{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+}
+
+.ItemBarIconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+
+.ItemBarIconContainer img{
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 3px 1.259px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+}
+.itemBarTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+.ItemBarHeaderTxt{
+
+
+    color: #707480;
+
+    /* inter/body/sm/500 - medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+}
+
+.ItemBarHeaderTxt span{
+    overflow: hidden;
+    color: #18181B;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    /* inter/body/sm/500 - medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    margin: 0;
+}
+
+.ItemBarDescTxt{
+    color: #707480;
+    text-align: right;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+    margin: 0;
+}
+
+
+.segmentCellTextContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.segmentCellTextContainer:hover{
+    cursor: pointer;
+}
+
+.segmentCellTextContainer p{
+    color: #18181B;
+    text-align: center;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+}
+
+
+.segmentCellNotification{
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.segmentCellNotification .segmentSelected{
+    border-radius: 6px;
+    background: #FFF;
+
+    /* dp/loop/basis/1dp-muted */
+    box-shadow: 0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 2px 14px -2px rgba(79, 81, 89, 0.12), 0px 0px 0px 1px rgba(188, 189, 194, 0.30), 0px 1px 1px 0px rgba(188, 189, 194, 0.20);
+}
+
+.segmentCellTextContainer p.notselected{
+    color: #707480;
 }
 
 .segmentCell{
@@ -486,5 +707,346 @@ body{
     /* Voeg eventuele andere verwijderingen van hoveranimaties toe */
 }
 
+.notificationTabMixedBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+.notificationTabBtnRechts{
+    display: flex;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+}
+.notificationTabBtnRechtsIcon{
+    display: flex;
+    width: 16px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+}
 
 
+
+.searchBar{
+    display: flex;
+    padding: 8px 0px 8px 16px;
+    align-items: center;
+    gap: 16px;
+}
+
+.searchNavBar{
+    display: flex;
+    width: 240px;
+    padding: 6px 6px 6px 12px;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 6px;
+    background: rgba(9, 9, 11, 0.02);
+
+    /* el/inner/xs ↑ */
+    box-shadow: 0px -1px 0px 0px rgba(188, 189, 194, 0.20) inset;
+}
+
+.searchIconBox{
+    display: flex;
+    width: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.searchPlaceHolder{
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+
+}
+
+.Inputsearch{
+    height: 20px;
+    width: 0;
+    flex: 1 0 0;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    overflow: hidden;
+    color: #BCBDC2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    /* inter/body/sm/400 - regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    border: none;
+    text-decoration: none;
+}
+.searchBarKey{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.keys{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    background: #FFF;
+
+    box-shadow: 0px 4px 4px -4px rgba(79, 81, 89, 0.32), 0px 2px 5px -2px rgba(79, 81, 89, 0.03), 0px 0px 0px 1px rgba(188, 189, 194, 0.25), 0px 1px 1px 0px rgba(188, 189, 194, 0.20);
+}
+.keys p{
+    color: #707480;
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.menuList{
+    display: none;
+    width: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 7px;
+    position: absolute;
+    top: 44px;
+
+}
+
+.mixedAvatar:hover .menuList {
+    display: flex;
+
+}
+
+
+
+.menuListBackdrop{
+    /*display: flex;*/
+    width: 220px;
+    height: 284px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+
+    position: absolute;
+
+    border-radius: 8px;
+    background: #FFF;
+
+    /* dp/basis/xl */
+    box-shadow: 0px 8px 12px -6px rgba(79, 81, 89, 0.16), 0px 16px 24px -8px rgba(79, 81, 89, 0.20), 0px 0px 0px 1px rgba(188, 189, 194, 0.20), 0px 1px 0px 0px rgba(255, 255, 255, 0.06) inset, 0px 0.5px 0px 0px rgba(255, 255, 255, 0.06) inset;
+}
+
+.menuHeader{
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom: 1px solid rgba(188, 189, 194, 0.20);
+}
+
+
+.headerContainer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 12px;
+}
+.menuAvatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+}
+.menuAvatarContainer{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 108px;
+    background: #2DD4BB;
+
+
+    backdrop-filter: blur(30px);
+}
+.menuAvatarContainerFixed{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.menuAvatarContainerFixed p {
+    color: rgba(0, 0, 0, 0.91);
+    text-align: center;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+#MenuAvatarDot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+.infoContainer h3{
+    margin: 0;
+    color: #18181B;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.infoContainer h4{
+    margin: 0;
+    height: 12px;
+    align-self: stretch;
+    overflow: hidden;
+    color: #707480;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.menuContainer{
+    display: flex;
+    padding-bottom: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+
+
+}
+
+.line-off{
+    display: flex;
+    padding: 4px 4px 0px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.menuContainerItemList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.menuItemContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.menuItem{
+    display: flex;
+    height: 32px;
+    padding: 6px 8px;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 6px;
+}
+
+.menuItem:hover{
+    cursor: pointer;
+    background: rgba(188, 189, 194, 0.20);
+}
+
+.itemContentContainer{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1 0 0;
+}
+.ItemMainContainer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+}
+
+.itemLeadIcon{
+    display: flex;
+    width: 16px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ItemMainContainer p{
+    color: #18181B;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.line-on{
+    display: flex;
+    padding: 4px 4px 0px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+    border-top: 1px solid rgba(188, 189, 194, 0.20);
+}
+
+.menuContainer2{
+    display: none;
+    padding-bottom: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+
+}
