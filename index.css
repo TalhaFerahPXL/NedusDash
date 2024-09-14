@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 body, html {
-    margin: 0; /* Verwijder de standaard marges */
-    padding: 0; /* Optioneel: verwijder de standaard padding */
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -180,8 +180,6 @@ body{
     flex-direction: column;
     align-items: center;
     align-self: stretch;
-
-    /*zet het helamaal onder*/
     position: absolute;
     bottom: 0;
     right: 0;
@@ -696,15 +694,15 @@ body{
 }
 
 .segmentCell, .segmentCellRechts {
-    /* Zorg ervoor dat de overgangen en animaties hier worden gedefinieerd */
-    transition: all 0.3s ease; /* Je kunt de overgangstijd aanpassen */
+
+    transition: all 0.3s ease;
 }
 
 
 .noHoverAnimation:hover {
-    transform: none !important; /* Verwijder eventuele transformaties op hover */
-    opacity: 1 !important; /* Behoud de volledige doorzichtigheid */
-    /* Voeg eventuele andere verwijderingen van hoveranimaties toe */
+    transform: none !important;
+    opacity: 1 !important;
+
 }
 
 .notificationTabMixedBtn{

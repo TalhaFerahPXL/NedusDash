@@ -154,13 +154,8 @@ function goDark() {
     document.querySelector(".bodyRechts").style.borderLeft = ""
     document.getElementById('mainLogo').src = 'ImagesHome/nedus.png';
 
-
-    // border top
     document.querySelector(".logo-div").style.borderBottom = "1px solid rgba(184, 184, 184, 0.11)";
-
-    // border center
     document.querySelector(".container-01").style.borderBottom = ""
-    // border bottom
     document.querySelector(".module").style.borderTop ="1px solid rgba(184, 184, 184, 0.11)"
 
 
@@ -270,7 +265,7 @@ var selectedElement = null;
 var sidebarElements = document.querySelectorAll('.sidebar-01-backdrop');
 var firstElement = document.querySelector('.sidebar-01-backdrop');
 
-// Functie om het eerste element standaard te selecteren
+
 selectElement(firstElement);
 selectedElement = firstElement;
 
@@ -305,7 +300,7 @@ document.getElementById("menuItem-Theme").addEventListener("click", ()=>{
 
     document.querySelector(".menuContainer").style.display = "none";
 
-    //werkt niet
+
     //document.querySelector(".menuListBackdrop").style.height = "175";
     document.querySelector(".menuContainer2").style.display = "flex";
 
@@ -353,7 +348,7 @@ document.querySelector(".mixedNotification").addEventListener("click", (event) =
     event.stopPropagation(); // Stop event bubbling
 });
 
-// Listen for clicks on the document
+
 document.addEventListener("click", (event) => {
     const navBar = document.querySelector(".navBarNotifications");
     const isClickedOutsideNavBar = !navBar.contains(event.target);
@@ -364,6 +359,4 @@ document.addEventListener("click", (event) => {
         notificationBtn.style.borderRadius = ""
     }
 });
-
-
 // NotificationIcon END
