@@ -6,6 +6,6 @@ Het dashboard is ontworpen met HTML, CSS en JavaScript en bevat zowel een light 
 Het ontwerp van het dashboard is geleverd in Figma door mijn werkplekcoach en ik heb het ontwikkeld met speciale aandacht voor pixel-perfecte ontwikkeling.
 
 # Screenshots
-<p align="center"><img src="Nedus/DarkMode.png" width="300"></p>
-<p align="center"><img src="Nedus/WhiteMode.png" width="300"></p>
-<p align="center"><img src="Nedus/WhiteMode2.png" width="300"></p>
+<p align="center"><img src="Nedus/DarkMode.png" width="600"></p>
+<p align="center"><img src="Nedus/WhiteMode.png" width="600"></p>
+<p align="center"><img src="Nedus/WhiteMode2.png" width="600"></p>
